@@ -18,6 +18,7 @@ goog.require('firebaseui.auth.AuthUI');
 goog.require('firebaseui.auth.AuthUIError');
 goog.require('firebaseui.auth.FirebaseUiHandler');
 goog.require('firebaseui.auth.widget.Config');
+goog.require('firebaseui.auth.soy2.strings');
 goog.require('goog.Promise');
 
 goog.exportSymbol(
@@ -95,3 +96,6 @@ goog.exportProperty(
     goog.Promise.prototype, 'catch', goog.Promise.prototype.thenCatch);
 goog.exportProperty(
     goog.Promise.prototype, 'finally', goog.Promise.prototype.thenAlways);
+goog.exportSymbol(
+    'firebaseui.auth.soy2.strings',
+    firebaseui.auth.soy2.strings);
