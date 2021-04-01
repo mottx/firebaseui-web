@@ -387,8 +387,8 @@ gulp.task('clean', () => fse.remove(TMP_DIR));
 
 // Executes the basic tasks for the default language.
 gulp.task('default', gulp.series(
-    'build-externs', 'build-ts', 'build-js',
-    'build-npm', 'build-esm', 'build-css', 'build-css-rtl',
+    'build-externs', 'build-ts', 'build-js-zh-TW',
+    'build-npm-zh-TW', 'build-esm-zh-TW', 'build-css', 'build-css-rtl',
     'clean'
 ));
 

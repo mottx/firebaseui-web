@@ -66,6 +66,12 @@ firebaseui.auth.widget.handler.handleFederatedLinking = function(
         firebaseui.auth.widget.handler.common.federatedSignIn(app, component,
             providerId, email);
       },
+      // On cancel.
+      function() {
+        component.dispose();
+        // On cancel return to widget start page.
+        firebaseui.auth.widget.handler.common.handleSignInStart(app, container);
+      },
       app.getConfig().getTosUrl(),
       app.getConfig().getPrivacyPolicyUrl());
   component.render(container);

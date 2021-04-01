@@ -946,6 +946,7 @@ Config.WidgetMode = {
   CALLBACK: 'callback',
   RECOVER_EMAIL: 'recoverEmail',
   RESET_PASSWORD: 'resetPassword',
+  RECOVERY_PASSWORD: 'recoveryPassword',
   REVERT_SECOND_FACTOR_ADDITION: 'revertSecondFactorAddition',
   SELECT: 'select',
   SIGN_IN: 'signIn',

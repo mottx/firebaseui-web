@@ -36,6 +36,8 @@ firebaseui.auth.ui.page.FederatedLinking =
    *     use for sign in.
    * @param {function()} onSubmitClick Callback to invoke when the submit button
    *     is clicked.
+   * @param {function()} onCancelClick Callback to invoke when the cancel
+   *     button is clicked.
    * @param {?function()=} opt_tosCallback Callback to invoke when the ToS link
    *     is clicked.
    * @param {?function()=} opt_privacyPolicyCallback Callback to invoke when the
@@ -43,7 +45,7 @@ firebaseui.auth.ui.page.FederatedLinking =
    * @param {?goog.dom.DomHelper=} opt_domHelper Optional DOM helper.
    */
   constructor(
-      email, providerConfig, onSubmitClick, opt_tosCallback,
+      email, providerConfig, onSubmitClick, onCancelClick, opt_tosCallback,
       opt_privacyPolicyCallback, opt_domHelper) {
     super(
         firebaseui.auth.soy2.page.federatedLinking,
@@ -53,11 +55,12 @@ firebaseui.auth.ui.page.FederatedLinking =
           privacyPolicyCallback: opt_privacyPolicyCallback
         });
     this.onSubmitClick_ = onSubmitClick;
+    this.onCancelClick_ = onCancelClick;
   }
 
   /** @override */
   enterDocument() {
-    this.initFormElement(this.onSubmitClick_);
+    this.initFormElement(this.onSubmitClick_, this.onCancelClick_);
     this.getSubmitElement().focus();
     super.enterDocument();
   }
@@ -65,6 +68,7 @@ firebaseui.auth.ui.page.FederatedLinking =
   /** @override */
   disposeInternal() {
     this.onSubmitClick_ = null;
+    this.onCancelClick_ = null;
     super.disposeInternal();
   }
 };

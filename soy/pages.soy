@@ -662,6 +662,7 @@
       </div>
       <div class="firebaseui-card-actions">
         <div class="firebaseui-form-actions">
+          {call firebaseui.auth.soy2.element.cancelButton /}
           {call firebaseui.auth.soy2.element.submitButton}
             {param label kind="text"}
               {msg desc="Label of a button that signs in a user with a federated identity provider

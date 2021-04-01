@@ -224,7 +224,8 @@ function doDispatchOperation(app, e) {
           // redirect to it.
           getContinueCallback());
       break;
-
+    case Config.WidgetMode.RECOVERY_PASSWORD:
+      handler.handle(HandlerName.PASSWORD_RECOVERY, app, container, null);
     case Config.WidgetMode.RECOVER_EMAIL:
       handler.handle(
           HandlerName.EMAIL_CHANGE_REVOCATION,
