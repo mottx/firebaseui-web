@@ -195,7 +195,9 @@ for a more in-depth example, showcasing a Single Page Application mode.
     <title>Sample FirebaseUI App</title>
     <!-- *******************************************************************************************
        * TODO(DEVELOPER): Paste the initialization snippet from:
-       * Firebase Console > Overview > Add Firebase to your web app. *
+       * Firebase Console > Overview > Add Firebase to your web app.
+       * In addition, include the firebase-auth SDK:
+       * <script src="https://www.gstatic.com/firebasejs/[FIREBASE VERSION USED IN SNIPPET]/firebase-auth.js"></script> *
        ***************************************************************************************** -->
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.css" />
@@ -443,6 +445,30 @@ FirebaseUI supports the following configuration parameters.
 <td>
   The URL of the Privacy Policy page or a callback function to be invoked
   when Privacy Policy link is clicked.
+</td>
+</tr>
+<tr>
+<td>adminRestrictedOperation</td>
+<td>No</td>
+<td>
+  The object for configuring `adminRestrictedOperation` options, contains 3
+  fields:
+  `status(boolean)`: This flag should mirror the project user actions
+  ("Enable create") settings. When sign-up is disabled in the project settings,
+  this should be set to `true`. Setting this to `true` without disabling sign-up
+  in the project settings will not have any effect. For GCIP projects, this is
+  done by going to the "Settings" page in the "Identity Platform" section in the
+  Cloud Console. Under the "USERS" tab, go to "User actions". Uncheck "Enable
+  create (sign-up)" and click "SAVE".
+  This does not enforce the policy but is rather useful for providing additional
+  instructions to the end user when a user tries to create a new user account
+  and the Auth server blocks the operation. This boolean works on all providers
+  (federated, email/password, email link and phone number).
+  `adminEmail(string|undefined)`: The optional site administrator email to
+  contact for access when sign up is disabled, for example: `admin@example.com`.
+  `helpLink(string|undefined)`: The optional help link to provide information
+  on how to get access to the site when sign up is disabled. For example:
+  `https://www.example.com/trouble_signing_in`.
 </td>
 </tr>
 </tbody>
