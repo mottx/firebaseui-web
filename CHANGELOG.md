@@ -1,1 +1,1 @@
-* Remove `accountchooser.com` credential helper as well as all its related configs and enums.
+* Now using Firebase v9/compat
