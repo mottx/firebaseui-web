@@ -1,1 +1,1 @@
-* Improved UI support for all identity provider sign up operations when they are restricted by site administrators.
+* Remove `accountchooser.com` credential helper as well as all its related configs and enums.
