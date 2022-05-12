@@ -1,1 +1,1 @@
-* Remove `accountchooser.com` credential helper as well as all its related configs and enums.
+Upgraded to gulp-sass 5.0.0 to use node-sass 6.0.0
