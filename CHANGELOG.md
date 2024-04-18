@@ -1,1 +1,1 @@
-Upgraded to gulp-sass 5.0.0 to use node-sass 6.0.0
+- Update `firebase` peer dependency to include `^10.0.0` compat (#1032)
