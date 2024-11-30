@@ -226,6 +226,7 @@ function doDispatchOperation(app, e) {
       break;
     case Config.WidgetMode.RECOVERY_PASSWORD:
       handler.handle(HandlerName.PASSWORD_RECOVERY, app, container, null);
+      break;
     case Config.WidgetMode.RECOVER_EMAIL:
       handler.handle(
           HandlerName.EMAIL_CHANGE_REVOCATION,
